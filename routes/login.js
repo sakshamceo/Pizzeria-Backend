@@ -28,7 +28,9 @@ const User = mongoose.model('users', userSchema);
 
 router.use(bodyparser.urlencoded({extended:true}))
 // Express JSON parsing middleware
-
+router.get('/hello',async(req,res)=>{
+res.send("HELLO BACK");
+});
 // login route
 router.post('/', async (req, res) => {
   try {
