@@ -12,7 +12,10 @@ const userSchema = new mongoose.Schema({
 });
 
 const port = 3002;
-mongoose.connect('mongodb://127.0.0.1:27017/Pizzeria');
+mongoose.connect('mongodb+srv://sakshamceo3:852456@cluster0.wbjvabf.mongodb.net/Pizzeria?retryWrites=true&w=majority', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'Mongo connection error'));
 db.on('open', () => {
